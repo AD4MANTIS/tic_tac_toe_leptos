@@ -4,7 +4,9 @@ use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
 
+pub mod counter_test;
 pub mod error_template;
+pub mod ttt;
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -25,22 +27,22 @@ pub fn App() -> impl IntoView {
         }>
             <main>
                 <Routes>
-                    <Route path="" view=HomePage/>
+                    <Route path="" view=ttt::TicTacToe/>
                 </Routes>
             </main>
         </Router>
     }
 }
 
-/// Renders the home page of your application.
-#[component]
-fn HomePage() -> impl IntoView {
-    // Creates a reactive value to update the button
-    let (count, set_count) = create_signal(0);
-    let on_click = move |_| set_count.update(|count| *count += 1);
+// /// Renders the home page of your application.
+// #[component]
+// fn HomePage() -> impl IntoView {
+//     // Creates a reactive value to update the button
+//     let (count, set_count) = create_signal(0);
+//     let on_click = move |_| set_count.update(|count| *count += 1);
 
-    view! {
-        <h1>"Welcome to Leptos!"</h1>
-        <button on:click=on_click>"Click Me: " {count}</button>
-    }
-}
+//     view! {
+//         <h1>"Welcome to Leptos!"</h1>
+//         <button on:click=on_click>"Click Me: " {count}</button>
+//     }
+// }
