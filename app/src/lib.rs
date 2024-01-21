@@ -4,7 +4,6 @@ use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
 
-pub mod counter_test;
 pub mod error_template;
 pub mod ttt;
 
